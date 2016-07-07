@@ -19,10 +19,10 @@ Auth0에서 만든 [JWT 사이트](https://jwt.io/introduction/)에 들어가보
 
 그래서 **json을 BASE64로 인코딩하여 하나의 문자열로 변환** 한다음 그 인코딩값을 통해 JSON Web Signature(JWS)를 사용하여 디지털 서명한다. 
 
-JWT는 마침표(`.`)를 기준으로 크게 3개로 나누어서 Encode를 한다.
-1. JSOE 헤더(JSON Object Signing and Encryption) - 사진의 Header
-2. JWT Claim Set - 사진의 Payload
-3. Signature - 사진의 Verify Signature
+JWT는 마침표(`.`)를 기준으로 크게 3개로 나누어서 Encode를 한다.<br>
+1. JSOE 헤더(JSON Object Signing and Encryption) - 사진의 Header<br>
+2. JWT Claim Set - 사진의 Payload<br>
+3. Signature - 사진의 Verify Signature<br>
 
 ![](https://gist.githubusercontent.com/LeoHeo/c9678154b1dadd85add5862b30e969f8/raw/f76b28d3633908efe0ad1777ee333592ee5efc4a/jwt2.png)
 
@@ -51,7 +51,7 @@ JWT는 마침표(`.`)를 기준으로 크게 3개로 나누어서 Encode를 한�
 
 [djano-rest-framwork-jwt-documentation](http://getblimp.github.io/django-rest-framework-jwt/)에 나와 있는 순서대로 쭉 따라하면 된다.
 
-예제에서는 
+예제에서는<br>
 인증방법으로 `session`, `JWT`, 'login-password'이고 인증된 사용자에게만 Permission이 주어진다.
 
 그러고 나서 `urls.py`에 아래와 같이 3개를 적어준다.
@@ -74,9 +74,9 @@ urlpatterns = patterns(
 
 `postman`을 사용해서 API 테스트를 할 수가 있다.
 
-`api-token-auth`은 `user_name`, `password`를 보매년 response로 token이 생성된다.
-`api-token-refresh`는 `token`이 살아있다는 전제하에 새로운 토근값을 받을 수 있습니다.
-`api-token-verify`는 가지고 있는 `token`에대해서 verify합니다.
+`api-token-auth`은 `user_name`, `password`를 보매년 response로 token이 생성된다.<br>
+`api-token-refresh`는 `token`이 살아있다는 전제하에 새로운 토근값을 받을 수 있습니다.<br>
+`api-token-verify`는 가지고 있는 `token`에대해서 verify합니다.<br>
 
 기본 설정을 바꿀수도 있다.
 ```python
