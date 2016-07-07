@@ -13,7 +13,7 @@ JWT는 `Header`에 `Authorization` 값을 넣어서 Authorization Server로 보�
 
 그럼 JWT가 어떻게 진행되는지 한번 살펴보자.
 
-Auth0에서 만든 [JWT 사이트](https://jwt.io/introduction/)에 들어가보면 설며이 되어있다.
+Auth0에서 만든 [JWT 사이트](https://jwt.io/introduction/)
 
 아까 Header에 값을 넣는다고 했는데 일반적으로 Header에 Json를 넣는거는 많이 불편하다.
 
@@ -29,7 +29,7 @@ JWT는 마침표(`.`)를 기준으로 크게 3개로 나누어서 Encode를 한�
 위 그림과 같이 3개를 조합해서 `token`을 만든다.
 
 ## JSOE 헤더(JSON Object Signing and Encryption)
-이 헤더는 어떤식으로 JWT 토근을 해석해야 하는지 명시한 부분이다.<br>
+이 헤더는 어떤식으로 JWT를 해석해야 하는지 명시한 부분이다.<br>
 `typ`는 어떤 형식을 사용할건지 적는거고, `alg`는 어떤 알고리즘을 사용할지에 대한 정보이다.<br>
 `HS256`은 `HMAC SHA-256`이라는 의미이고, 그 외에도 `HS512`, `RS256(RSA SHA-256)`같은 알고리즘을 사용할수도 있다.<br>
 
@@ -40,7 +40,7 @@ JWT는 마침표(`.`)를 기준으로 크게 3개로 나누어서 Encode를 한�
 ## Signature
 앞에 JSOE 헤더랑 JWT Claim Set만으로 encode를 한다면 누구나 다시 이값을 decode할수가 있다.
 
-그렇게 되면 위변조되었는지를 검증하기 위해 Signature부분이 있다.<br>
+그렇게 되면 누구나 위변조 할수 있기 때문에 Signature부분이 있다.<br>
 여기서는 아까 헤더에서 지정했던 알고리즘으로 인코딩하여 Signature를 생성한다.<br>
 이렇게 3개를 합쳐서 Token을 생성하는걸 `JWT`라고 한다.<br>
 
@@ -52,7 +52,8 @@ JWT는 마침표(`.`)를 기준으로 크게 3개로 나누어서 Encode를 한�
 [djano-rest-framwork-jwt-documentation](http://getblimp.github.io/django-rest-framework-jwt/)에 나와 있는 순서대로 쭉 따라하면 된다.
 
 예제에서는<br>
-인증방법으로 `session`, `JWT`, 'login-password'이고 인증된 사용자에게만 Permission이 주어진다.
+인증방법으로 `session`, `JWT`, `baseAuth(login, paswword)`이고<br>
+인증된 사용자에게만 Permission이 주어진다.
 
 그러고 나서 `urls.py`에 아래와 같이 3개를 적어준다.
 
