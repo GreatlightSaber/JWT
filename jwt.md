@@ -4,6 +4,11 @@ JWT(Json Web Token)을 알게 되었다.
 
 영어표기로는 `JWT` 읽기로는 `JOT`(~~발음주의~~)라고 읽는다. 
 
+## 왜 JWT 인가?
+CORS(Cross-origin resource sharing)문제때문에 주로 쓴다.
+쿠키는 발행한 서버에서만 유효하다. site-a.com에서 발행한 쿠키는 site-b.com에서 사용할 수 없다.
+토큰은 HTML Body 형태로 전송하기 때문에 다른 도메인에서 API를 호출해야 하는 서비스 구성에 유용하다.
+
 **그럼 대체 JWT란 무엇인가?**
 
 한마디로 쉽게말하면, JSON 형태로 인증토큰을 만들어 통신할때쓰는 인증방식이다.
