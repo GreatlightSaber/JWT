@@ -120,3 +120,8 @@ JWT_AUTH = {
     'JWT_AUTH_HEADER_PREFIX': 'JWT',
 }
 ```
+
+## 출처
+[Introduction to JSON Web Tokens](https://jwt.io/introduction/)
+[REST JWT(JSON Web Token)소개 - #1 개념 소개](http://bcho.tistory.com/999)
+[JWT(JSON Web Token) - JOT을 아시나요?](http://opennaru.tistory.com/94)
